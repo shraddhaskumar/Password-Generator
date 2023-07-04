@@ -1,0 +1,33 @@
+import random
+
+print("Welcome to Password Generator!\n")
+
+n = int(input("Enter the length of the password in multiples of 4: "))
+m = int(input("Enter the number of passwords to be generated: "))
+print()
+
+No = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
+Lcase = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
+Ucase = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']
+Special_characters = ['!', '@', '#', '$', '%', '^', '&', '*', '<', '>', '/']
+
+if m == 1:
+    print("Here is your password:")
+else:
+    print("Here are your passwords:")
+print()
+
+for j in range(m):
+    password = ''
+
+    for i in range(n):
+        if i % 4 == 0:
+            password += random.choice(No)
+        elif i % 4 == 1:
+            password += random.choice(Ucase)
+        elif i % 4 == 2:
+            password += random.choice(Lcase)
+        else:
+            password += random.choice(Special_characters)
+
+    print(password)
